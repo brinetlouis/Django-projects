@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  {% block title %}
+    <title>MovieList</title>
+  {% endblock %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light color-black bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href=""><h3>Online Movie Store</h3></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+      </ul>
+      <form class="d-flex">
+        {% block button %}
+
+        <button class="btn btn-outline-danger"><a href="{% url 'add'%}" style=text-decoration:none;>Add Movie</a></button>
+        {% endblock %}
+      </form>
+    </div>
+  </div>
+</nav>
+{% block content %}
+{% endblock %}
+{% block footer%}
+<footer class="bg-dark text-white mt-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>About Us</h5>
+        <p class="text-muted">Movie booking platform providing the latest films and showtimes.</p>
+      </div>
+      <hr class="my-4 bg-light">
+
+    <div class="row">
+      <div class="col-md-6 ">
+        <p class="mb-0">&copy; 2025 Movie Booking. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </footer>
+{% endblock %}
+</body>
+</html>

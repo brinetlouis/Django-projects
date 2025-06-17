@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentHome</title>
+</head>
+<body>
+<h2>Welcome to Student Home page,
+    {% if user.is_authenticated %}
+    {{user.username}}</h2><br>
+<button class="btn"><a href="{% url 'signout' %}" style="text-decoration:none;">Logout</a></button>
+<button class="btn"><a href="{% url 'password_change' %}" style="text-decoration:none;">Change Password</a></button>
+    {% else %}
+Guest
+<br>
+<button class="btn"><a href="{% url 'login' %}" style="text-decoration:none;">Login</a></button>
+<button class="btn"><a href="{% url 'signup' %}" style="text-decoration:none;">Signup</a></button>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+  {% block title %}
+    <title>Search</title>
+  {% endblock %}
+{% block content %}
+
+  {% if book %}
+  {% for b in book %}
+<div class="container w-50 mx-auto m-4">
+  <table class="table table-bordered text-center">
+    <tr>
+      <th>Title</th>
+      <td>{{b.title}}</td>
+    </tr>
+    <tr>
+      <th>Author</th>
+      <td>{{b.author}}</td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td>{{b.price}}</td>
+    </tr>
+    <tr>
+      <th>Pages</th>
+      <td>{{b.pages}}</td>
+    </tr>
+    <tr>
+      <th>Language</th>
+      <td>{{b.language}}</td>
+    </tr>
+    <tr>
+      <th>Cover</th>
+      <td><img src="{{b.image.url}}" height="200px" width="145px"></td>
+    </tr>
+  </table>
+  </div>
+  {% endfor %}
+
+  {% else %}
+  <h2>No Books Found</h2>
+   {% endif %}
+
+
+
+{% endblock %}
+

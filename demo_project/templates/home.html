@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<img src="{% static 'images/batman.png'%}">
+<h1>Welcome to Homepage</h1>
+<h3>My Name is {{name}}</h3>
+<h3>I'm {{age}} years old</h3>
+</body>
+</html>

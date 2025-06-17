@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+  {% block title %}
+    <title>View Book</title>
+  {% endblock %}
+{% block content %}
+<div class="container">
+<center><h2 class="p-3">View Book</h2></center>
+<table class="table table-bordered border border-primary">
+<tr class="bg-light">
+    <th>TITLE</th>
+    <th>AUTHOR</th>
+    <th>PRICE</th>
+    <th>PAGES</th>
+    <th>LANGUAGE</th>
+    <th>COVER</th>
+    <th>ACTIONS</th>
+
+</tr>
+{% for b in books %}
+    <tr>
+    <td>{{b.title}}</td>
+    <td>{{b.author}}</td>
+    <td>{{b.price}}</td>
+    <td>{{b.pages}}</td>
+    <td>{{b.language}}</td>
+    <td><img src="{{b.image.url}}" height="200px" width="150px"></td>
+        <td><a class="btn btn-danger me-3" href="{% url 'books:detail' b.id %}">Detail</a>
+            <a class="btn btn-danger me-3" href="{% url 'books:edit' b.id  %}">Edit</a>
+            <a class="btn btn-danger" href="{% url 'books:delete' b.id %}">Delete</a></td>
+   </tr>
+{% endfor %}
+</table>
+
+<!--<ol>-->
+<!--{% for b in books %}-->
+<!--    <li>Book Details</li>-->
+<!--    <ul>-->
+<!--        <li>TITLE-{{b.title}}</li>-->
+<!--        <li>AUTHOR-{{b.author}}</li>-->
+<!--        <li>PRICE-{{b.price}}</li>-->
+<!--        <li>PAGES-{{b.pages}}</li>-->
+<!--        <li>LANGUAGE-{{b.language}}</li>-->
+
+<!--        <li><img src="{{b.image.url}}" height="200px" width="150px"></li>-->
+<!--    </ul>-->
+<!--    {% endfor %}-->
+<!--</ol>-->
+</div>
+{% endblock %}
